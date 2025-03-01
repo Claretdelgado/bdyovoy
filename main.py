@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv() #carga las variables de entorno de .env
-MONGODB_URI = os.getenv("mongodb://localhost:27017/yovoybd")
+MONGODB_URI = os.getenv('url_bd')
 
 
 client = MongoClient("mongodb://localhost:27017")
