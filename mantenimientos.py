@@ -1,22 +1,22 @@
 from pymongo import MongoClient
 
-client = MongoClient("localhost", 27017)
+client = MongoClient("mongodb://localhost:27017")
 db = client["yovoybd"]
-mantenimiento = db["mantenimiento"]
+mantenimientos = db["mantenimientos"]
 
 def agregar_mantenimiento(mantenimiento):
-    mantenimiento.insert_one(mantenimiento)
+    mantenimientos.insert_one(mantenimiento)
     print("El mantenimiento fue agregado.")
 
 def leer_mantenimiento(id_mantenimiento):
-    return mantenimiento.find_one({"id_mantenimiento": id_mantenimiento})
+    return mantenimientos.find_one({"id_mantenimiento": id_mantenimiento})
 
 def actualizar_mantenimiento(id_mantenimiento, actualizacion):
-    mantenimiento.update_one({"id_mantenimiento": id_mantenimiento}, {"$set": actualizacion})
+    mantenimientos.update_one({"id_mantenimiento": id_mantenimiento}, {"$set": actualizacion})
     print("El mantenimiento fue actualizado.")
 
 def eliminar_mantenimiento(id_mantenimiento):
-    mantenimiento.delete_one({"id_mantenimiento": id_mantenimiento})
+    mantenimientos.delete_one({"id_mantenimiento": id_mantenimiento})
     print("El mantenimiento fue eliminado.")
 
 if __name__ == "__main__":

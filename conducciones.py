@@ -1,22 +1,22 @@
 from pymongo import MongoClient
 
-client = MongoClient("localhost", 27017)
+client = MongoClient("mongodb://localhost:27017")
 db = client["yovoybd"]
-conduccion = db["conduccion"]
+conducciones = db["conducciones"]
 
 def agregar_conduccion(conduccion):
-    conduccion.insert_one(conduccion)
+    conducciones.insert_one(conduccion)
     print("la conducción fue agregada.")
 
 def leer_conduccion(id_conduccion):
-    return conduccion.find_one({"id_conduccion": id_conduccion})
+    return conducciones.find_one({"id_conduccion": id_conduccion})
 
 def actualizar_conduccion(id_conduccion, actualizacion):
-    conduccion.update_one({"id_conduccion": id_conduccion}, {"$set": actualizacion})
+    conducciones.update_one({"id_conduccion": id_conduccion}, {"$set": actualizacion})
     print("la conducción fue actualizada.")
 
 def eliminar_conduccion(id_conduccion):
-    conduccion.delete_one({"id_conduccion": id_conduccion})
+    conducciones.delete_one({"id_conduccion": id_conduccion})
     print("la conducción fue eliminada.")
 
 if __name__ == "__main__":
