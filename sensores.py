@@ -30,6 +30,7 @@ if __name__ == "__main__":
         "temperatura_motor": 90,
         "ubicacion_gps": "19.432608,-99.133209",
         "fecha_registro": "2025-02-28T21:00:00",
-        "horas_motor": 100
+        "horas_motor": 100,
+        "revolucionesxmin": 30
     }
     agregar_sensor(sensor)

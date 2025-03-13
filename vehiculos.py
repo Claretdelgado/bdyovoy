@@ -22,6 +22,13 @@ def eliminar_vehiculo(id_vehiculo):
 if __name__ == "__main__":
     vehiculo = {
         "id_vehiculo": "V001",
+        "aceleracion": 9.26,
+        "frenado": -3.4,
+        "velocidad_variacion": "2.5 km",
+        "horas_operacion": "10 hrs",
+        "temperatura_motor": "95.5 °C",
+        "masotomocineticas": "ligeras",
+        "vibracion": 2.4,
         "modelo": "mercedes",
         "marca": "Mercedes",
         "año": 2018,

@@ -14,10 +14,18 @@ import vehiculos
 import sensores
 import conducciones
 import mantenimientos
+import disponibilidades
 
 if __name__ == "__main__":
     vehiculo = {
         "id_vehiculo": "V001",
+        "aceleracion": 9.26,
+        "frenado": -3.4,
+        "velocidad_variacion": "2.5 km",
+        "horas_operacion": "10 hrs",
+        "temperatura_motor": "95.5 °C",
+        "masotomocineticas": "ligeras",
+        "vibracion": 2.4,
         "modelo": "mercedes",
         "marca": "Mercedes",
         "año": 2018,
@@ -42,7 +50,8 @@ if __name__ == "__main__":
         "temperatura_motor": 90,
         "ubicacion_gps": "19.432608,-99.133209",
         "fecha_registro": "2025-02-28",
-        "horas_motor": 100
+        "horas_motor": 100,
+        "revolucionesxmin": 30,
     }
     sensores.agregar_sensor(sensor)
 
@@ -61,13 +70,27 @@ if __name__ == "__main__":
         "id_vehiculo": "V001",
         "tipo_mantenimiento": "Preventivo",
         "piezas_cambiadas": ["Filtro de aceite", "Llantas"],
+        "piezas_que_cambiar": ["Filtro de aceite","P001", "2025-04-015"],
         "tiempo_estimado_reparacion": 4,
         "fecha_programada": "2025-04-015",
         "fecha_realizado": "2025-05-28",
         "alertas_fallas": "Sensor de oxígeno",
-        "vida_util_piezas": 5000
+        "vida_util_piezas": 5000,
+        "cambio_aceite": ["tipo","2025-05-28"],
+        "desgaste_frenos": "intermedio",
+        "historial_eventos": "se detecto ruido en las llantas"
+    
     }
     mantenimientos.agregar_mantenimiento(mantenimiento)
+    
+    disponibilidad= {
+        "id_camion": "C001",
+        "fecha_mantenimiento": "2025-05-28",
+        "salida": "2025-03-12 08:30:00",
+        "ruta": "ruta norte",
+        "tiempo_de_mantenimiento": "3 horas"
+    }
+    disponibilidades.agregar_disponibilidad(disponibilidad)
 
 
 
